@@ -34,10 +34,15 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'com.prolificinteractive:material-calendarview:1.4.3'
 
     // Please use playersdk if only media player is used  	
-    // implementation 'com.vxg.mediasdk:playersdk:6.96.20211118'
+    // implementation 'com.vxg.mediasdk:playersdk:6.96.20220707'
     // Please use cloudsdk for grid example because 
     // CloudMultiPlayerView is located in cloud SDK
-    implementation 'com.vxg.cloudsdk:cloudsdk:'
+    if (project.hasProperty("isLocalDependencies") && !project.isLocalDependencies.isEmpty()) {
+        implementation fileTree(dir: project.art_url_cloudsdk, include: '*.aar')
+    } else {
+        implementation 'com.vxg.cloudsdk:cloudsdk:'
+    }
 }

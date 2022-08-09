@@ -1,5 +1,26 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
+    if (!project.hasProperty("art_userName") || !project.hasProperty('art_password')) {
+        if (file("./art/properties").exists()) {
+            def props = new Properties()
+            file("./art/properties").withInputStream { props.load(it) }
+            project.ext.set("art_userName", props.getProperty("art_userName"))
+            project.ext.set("art_password", props.getProperty("art_password"))
+        } else {
+            project.ext.set("art_userName", "")
+            project.ext.set("art_password", "")
+        }
+    }
+
+    if (!project.hasProperty("isLocalDependencies")) {
+        project.ext.set("isLocalDependencies", "")
+    }
+    if (!project.hasProperty("art_url")) {
+        project.ext.set("art_url_playersdk", "../../../../aar")
+        project.ext.set("art_url_cloudsdk", "../../../../../../CloudSDK/aar")
+        project.ext.set("isLocalDependencies", "true")
+    }
+
     repositories {
         jcenter()
         google()
@@ -13,14 +34,19 @@ allprojects {
     repositories {
         jcenter()
         google()
-        maven {
-            credentials {
-                username "developer"
-                password "developer1"
+        if (project.isLocalDependencies.isEmpty()) {
+            maven {
+                credentials {
+                    username project.art_userName
+                    password project.art_password
+                }
+                url project.art_url
+                allowInsecureProtocol true
             }
-            url 'http://android.vxg.io/repository/internal/'
-            name 'VXG'
-            allowInsecureProtocol true
+        } else {
+            flatDir {
+                dirs project.art_url_playersdk, project.art_url_cloudsdk
+            }
         }
-    }
+     }
 }

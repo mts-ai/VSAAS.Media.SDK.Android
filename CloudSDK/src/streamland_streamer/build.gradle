@@ -46,5 +46,10 @@ dependencies {
     implementation 'androidx.vectordrawable:vectordrawable:1.0.0'
     implementation 'com.google.android.gms:play-services-base:11.6.0'
 
-    implementation 'com.vxg.cloudsdk:cloudsdk:'
+    if (project.hasProperty("isLocalDependencies") && !project.isLocalDependencies.isEmpty()) {
+        implementation fileTree(dir: project.art_url_cloudsdk, include: '*.aar')
+    } else {
+        implementation 'com.vxg.cloudsdk:cloudsdk:'
+    }
+    implementation 'com.prolificinteractive:material-calendarview:1.4.3'
 }

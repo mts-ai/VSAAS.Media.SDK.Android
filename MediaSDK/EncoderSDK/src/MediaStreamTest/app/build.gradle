@@ -22,7 +22,11 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.vxg.mediasdk:encodersdk:6.13.20220419'
+    if (project.hasProperty("isLocalDependencies") && !project.isLocalDependencies.isEmpty()) {
+        implementation fileTree(dir: project.art_url_encodersdk, include: '*.aar')
+    } else {
+        implementation 'com.vxg.mediasdk:encodersdk:6.13.20220707'
+    }
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
 }

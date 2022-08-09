@@ -26,7 +26,12 @@ android {
 
 
 dependencies {
-	implementation 'com.vxg.cloudsdk:cloudsdk:'
+    if (project.hasProperty("isLocalDependencies") && !project.isLocalDependencies.isEmpty()) {
+        implementation fileTree(dir: project.art_url_cloudsdk, include: '*.aar')
+    } else {
+        implementation 'com.vxg.cloudsdk:cloudsdk:'
+    }
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.prolificinteractive:material-calendarview:1.4.3'
 }
 

@@ -1,5 +1,67 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.299
+
+ CloudSDK
+Version 2.0.299_20220707:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20220707,
+  EncoderSDK: 6.13.20220707
+
+ PlayerSDK
+Version 6.96.20220707:
+- migrated to openssl version 1.1.1q
+
+ EncoderSDK
+Version 6.13.20220707:
+- migrated to openssl version 1.1.1q
+
+### MobileSDK 2.0.298
+
+ CloudSDK
+Version 2.0.298_20220705:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20220705,
+  EncoderSDK: 6.13.20220705
+
+ PlayerSDK
+Version 6.96.20220705:
+- migrated openssl to version 1.1.1p
+- migrated to FFMPEG version 4.4.2
+
+ EncoderSDK
+Version 6.13.20220705:
+- migrated openssl to version 1.1.1p
+- migrated to FFMPEG version 4.4.2
+
+### MobileSDK 2.0.297
+
+ CloudSDK
+Version 2.0.297_20220622:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20220622
+- added the ability to configure the behavior of the sequence of double taps
+
+ PlayerSDK
+Version 6.96.20220622:
+- added support double tap gesture for all aspect ratio zoom/move modes
+- added the ability to configure the behavior of the sequence of double taps
+
+ EncoderSDK
+Version 6.13.20220518:
+
+### MobileSDK 2.0.296
+
+ CloudSDK
+Version 2.0.296_20220618:
+- fixed CloudStreamer connection conflict issue
+
+ PlayerSDK
+Version 6.96.20220411:
+
+ EncoderSDK
+Version 6.13.20220518:
+
 ### MobileSDK 2.0.294
 
  CloudSDK

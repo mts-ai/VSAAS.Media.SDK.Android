@@ -40,24 +40,22 @@ VXG Mobile SDK structure:
 ## SDK structure
 The SDK package consists of following files and folders:
 
+VXG.Mobile.SDK/MediaSDK/MediaPlayer.Android/
+
 * aar   (Aar archive) 
-* bin 	(Link on the samples applications binaries)
-* docs	(Files with links to documentation)
+* bin 	(Sample application binaries)
+* libs 	(Shared libraries)
+    - mediaplayersdk.jar
+    - librtspplr-xx.so
+    - librtstm-xx.so
+    - libSDL2-xx.so
+    - libyuv_shared-xx.so
+    (where 'xx' is one of the platforms: ARM general, x86, ARV V7, ARM V7a)
 * src 	(Sample applications source code)
 
 ## How to apply a license key
 
 This is **not required for evaluation and testing**. It’s required only after purchasing a license in order to remove evaluation version limitations.
-
-**Step 1:** Copy the Mobile license key from the License & Plans page of the dashboard
-
-![Screenshot](https://user-images.githubusercontent.com/11888021/156011640-5da87a5d-c208-4b90-87ed-0adca54b9213.png)
-
-
-**Step 2:** Create an empty file called **license** in your application folder **assets** and paste your license key into this file. See on the example below how it should look in a test application **\streamland_player**.
-
-![Screenshot](https://user-images.githubusercontent.com/11888021/156011770-cdba7598-5547-4f94-b697-2fa2db34d359.png)
-
 
 ## Integration with an application
 

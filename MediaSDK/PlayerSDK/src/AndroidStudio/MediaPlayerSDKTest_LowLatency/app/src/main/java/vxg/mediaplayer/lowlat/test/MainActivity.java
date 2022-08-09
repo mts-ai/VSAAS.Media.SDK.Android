@@ -572,31 +572,6 @@ public class MainActivity extends Activity implements OnClickListener, MediaPlay
     	    	
     	    	player.setVisibility(View.INVISIBLE);
 
-				/*
-				BufferedReader br = null;
-				String 	strLine = "";
-				String response = null;
-				Log.v(TAG, "URL: " + "http://resitest.cbs.boschsecurity.com/url/URL");
-				//br = new BufferedReader(new FileReader(new File("http://resitest.cbs.boschsecurity.com/url/URL")));
-				//strLine = download("http://resitest.cbs.boschsecurity.com/url/URL");
-				//Retrievedata rt = new Retrievedata(); 
-				//strLine = rt.doInBackground("http://resitest.cbs.boschsecurity.com/url/URL");
-				Retrievedata rt = new Retrievedata(); 
-				rt.execute("");
-				Log.v(TAG, "URL RTSP: " + strLine);
-				try {
-					Thread.sleep(1000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				strLine= rt.URL;
-				conf.setConnectionUrl(strLine);
-				*/
-
-
-				
-
 				Log.v(TAG, "SETTING : A/V Sync: " + ((sett.synchroEnable==1)?"ON":"OFF"));
 				Log.v(TAG, "SETTING : Decoder : " + ((sett.decoderType==1)?"h/w":"s/w"));
 				Log.v(TAG, "SETTING : Net Prot: " + ((sett.TCP==1)?"TCP":"UDP"));
@@ -604,10 +579,6 @@ public class MainActivity extends Activity implements OnClickListener, MediaPlay
 				Log.v(TAG, "SETTING : Low Lat : " + ((sett.lowLatency==1)?"1":"0"));
 				Log.v(TAG, "SETTING : Asp Rate: " + (sett.rendererEnableAspectRatio));
 
-
-				
-
-				
     	    	conf.setConnectionUrl(player.getConfig().getConnectionUrl());
 				
     	    	conf.setConnectionNetworkProtocol(sett.TCP);

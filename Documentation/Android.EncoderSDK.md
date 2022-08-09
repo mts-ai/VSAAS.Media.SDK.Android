@@ -35,27 +35,21 @@ VXG Mobile SDK structure:
 ## SDK structure
 The SDK package consists of the following files and folders:
 
-* aar   (Aar archive) 
-* bin 	(Link on the samples applications binaries)
-* docs	(Files with links to documentation)
-* src 	(Sample applications source code)
+* bin (Sample application package)
+    - MediaStreamTest.apk
+* libs (Library files to be linked to the application)
+    - mediacapturedk.jar 
+    - libstreamer.so 
+    - librtstm.so
+* src (Sample project to test the SDK)
 
 ## Block diagram
 
-![Screenshot](https://user-images.githubusercontent.com/11888021/156012158-549670a6-b66b-4436-8407-e722bb33b568.png)
-
+![Screenshot](img/Android.Encoder.png)
 
 ## How to apply the license key
 
 This is **not required for evaluation and testing**. It is only required after purchasing a license in order to remove the evaluation version limitations.
-
-**Step 1:** Copy the Mobile license key from the License & Plans page
-
-![Screenshot](https://user-images.githubusercontent.com/11888021/156011640-5da87a5d-c208-4b90-87ed-0adca54b9213.png)
-
-**Step 2:** Create an empty file called **license** in your application folder **assets** and paste your license key into this file. See the picture below how it should look in corresponded test application **\streamland_streamer**.
-
-![Screenshot](https://user-images.githubusercontent.com/11888021/156011770-cdba7598-5547-4f94-b697-2fa2db34d359.png)
 
 ## Integration with an application
 #### Integration using a resource file in 2 steps:

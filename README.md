@@ -4,7 +4,7 @@
 
 ## Disclaimer
 This is a non-commercial version of VXG Media SDK for Android. Playback is limited to 2 minutes.
-Commercial use and access to extra features requires a license. Learn more about <a href="https://www.videoexpertsgroup.com">VXG RTSP SDK.</a>
+Commercial use and access to extra features requires a license. Learn more about VXG RTSP SDK.
 
 ## About SDK
 SDK consists of three modules:
@@ -70,4 +70,4 @@ Source code of samples can be provided.
    * Capturing raw video up to 30 FPS
    * Capturing raw audio (PCM format)
 
-Learn more about <a href="https://www.videoexpertsgroup.com">Cloud Video Surveillance</a>
+Learn more about Cloud Video Surveillance
