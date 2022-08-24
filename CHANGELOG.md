@@ -1,5 +1,33 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.301
+
+ CloudSDK
+Version 2.0.301_20220824:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20220824,
+  EncoderSDK: 6.13.20220824
+
+ PlayerSDK
+Version 6.96.20220824:
+- updated license list
+
+ EncoderSDK
+Version 6.13.20220824:
+- updated license list
+
+### MobileSDK 2.0.300
+
+ CloudSDK
+Version 2.0.300_20220812:
+- added support for get/set position when playing url (local playback)
+
+ PlayerSDK
+Version 6.96.20220707:
+
+ EncoderSDK
+Version 6.13.20220707:
+
 ### MobileSDK 2.0.299
 
  CloudSDK
