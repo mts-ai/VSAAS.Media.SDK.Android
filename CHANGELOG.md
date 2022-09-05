@@ -1,5 +1,18 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.302
+
+ CloudSDK
+Version 2.0.302_20220905:
+- fixed return value issue for getposition during setposition
+- added new events support: SEEK_STARTED, SEEK_FAILED
+
+ PlayerSDK
+Version 6.96.20220824:
+
+ EncoderSDK
+Version 6.13.20220824:
+
 ### MobileSDK 2.0.301
 
  CloudSDK

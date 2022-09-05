@@ -109,6 +109,21 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 			}
 
 			@Override
+			public int onSeekStarted() {
+				return 0;
+			}
+
+			@Override
+			public int onSeekFailed() {
+				return 0;
+			}
+
+			@Override
+			public int onSeekCompleted() {
+				return 0;
+			}
+
+			@Override
 			public int onLocalRecordStarted() {
 				Log.d(TAG,"onLocalRecordStarted: ");
 				isRecording = true;
