@@ -1,5 +1,17 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.303
+
+ CloudSDK
+Version 2.0.303_20220906:
+- reverted back getPosition behavior
+
+ PlayerSDK
+Version 6.96.20220824:
+
+ EncoderSDK
+Version 6.13.20220824:
+
 ### MobileSDK 2.0.302
 
  CloudSDK
