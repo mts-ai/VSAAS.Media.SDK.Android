@@ -1,5 +1,44 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.305
+
+ CloudSDK
+Version 2.0.305_20221127:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20221127
+  EncoderSDK: 6.13.20221127
+- addec clips API support
+- improved APIs for timeline, activity, events, records, thumbnails
+- added code snippets in the player example
+- fixed a lot of bugs and typos
+
+ PlayerSDK
+Version 6.96.20221127:
+- updated license list
+
+ EncoderSDK
+Version 6.13.20221127:
+- updated license list
+
+### MobileSDK 2.0.304
+
+ CloudSDK
+Version 2.0.304_20221118:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20221118
+- added fixes for latest Cloud API changes
+- fixed issues with playning records on the Android 13
+- improved internal surface switching processing
+- added access for new advanced PlayerSDK config settings
+
+ PlayerSDK
+Version 6.96.20221118:
+- added new advanced config settings:
+  probesize, fpsprobesize, formatprobesize, max_probe_packets, live_start_index, rtmp_buffer, rtmp_live
+
+ EncoderSDK
+Version 6.13.20220824:
+
 ### MobileSDK 2.0.303
 
  CloudSDK

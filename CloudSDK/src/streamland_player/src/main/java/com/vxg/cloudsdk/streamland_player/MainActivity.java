@@ -37,6 +37,7 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
+import com.vxg.cloud.core.CloudCommon.CloudLiveUrlType;
 import com.vxg.cloud.core.CloudHelpers;
 import com.vxg.cloudsdk.CloudPlayerSDK;
 import com.vxg.cloudsdk.CloudSDK;
@@ -45,11 +46,18 @@ import com.vxg.cloudsdk.Enums.CloudPlayerLocalRecordFlag;
 import com.vxg.cloudsdk.Interfaces.ICloudObject;
 import com.vxg.cloudsdk.Interfaces.ICloudPlayerCallback;
 import com.vxg.cloudsdk.Objects.CloudPlayerConfig;
+import com.vxg.cloudsdk.streamland_player.snippets.CloudClips;
+import com.vxg.cloudsdk.streamland_player.snippets.CloudEvents;
+import com.vxg.cloudsdk.streamland_player.snippets.CloudTimelineDays;
+import com.vxg.cloudsdk.streamland_player.snippets.CloudTimelineSegments;
+import com.vxg.cloudsdk.streamland_player.snippets.CloudTimelineThumbnails;
+import com.vxg.cloudsdk.streamland_player.snippets.CloudTimelines;
 import com.vxg.ui.CloudPlayerView;
 import com.vxg.ui.TimeLineSet;
 
 import java.io.File;
 import java.util.List;
+import java.util.concurrent.Executors;
 
 public class MainActivity extends Activity implements OnClickListener, CloudPlayerView.OnCloudPlayerViewChange
 {
@@ -57,6 +65,7 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 
 	public  static		AutoCompleteTextView	edtId;
 	private Button		btnConnect;
+	private Button 		btnTestAPI;
 	private Button 		btnShowTimeline;
 
 	private Button 		btnRecord;
@@ -179,7 +188,7 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 			}
 		});
 
-		btnShowTimeline =(Button) findViewById(R.id.but_show_timeline);
+		btnShowTimeline = (Button) findViewById(R.id.but_show_timeline);
 		btnShowTimeline.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -193,7 +202,15 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 			}
 		});
 
-		btnRecord =(Button) findViewById(R.id.but_record);
+		btnTestAPI = (Button) findViewById(R.id.but_test_api);
+		btnTestAPI.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				testAPI();
+			}
+		});
+
+		btnRecord = (Button) findViewById(R.id.but_record);
 		btnRecord.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -286,7 +303,7 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 			return;
 		}
     }
- 
+
 	private String getRecordPath()
 	{
 		File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
@@ -301,6 +318,57 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 		return mediaStorageDir.getPath();
 	}
 
+	private void testAPI() {
+		// To check the snippets, please uncomment what you are interested in checking.
+		// The result is in the application logs
+		// For avoid run network code in main thread with methods *Sync, we use Executors.newSingleThreadExecutor for this test
+
+//		CloudPlayerSDK testSDK = new CloudPlayerSDK(null, null, null);
+//		testSDK.setSourceForAPIOnly(msAccessToken);
+//
+//		CloudClips clips = new CloudClips(testSDK);
+//		Executors.newSingleThreadExecutor().submit(clips::printClipsSync);
+//		Executors.newSingleThreadExecutor().submit(clips::createClipCompleteSync);
+//		Executors.newSingleThreadExecutor().submit(clips::createClipSync);
+//		Executors.newSingleThreadExecutor().submit(clips::updateClipsSync);
+//		Executors.newSingleThreadExecutor().submit(clips::deleteClipsForClipIdSync);
+//		Executors.newSingleThreadExecutor().submit(clips::printClipsSync);
+//		Executors.newSingleThreadExecutor().submit(() -> clips.deleteClipsForCameraIdSync(-1));
+//		Executors.newSingleThreadExecutor().submit(clips::printClipsSync);
+//		clips.printClips();
+//		clips.createClip();
+//		clips.deleteClipsForCameraId(-1);
+//
+//		CloudTimelines timelines = new CloudTimelines(testSDK);
+//		Executors.newSingleThreadExecutor().submit(timelines::printTimelineSync);
+//		Executors.newSingleThreadExecutor().submit(timelines::printTimelineWithLimitSync);
+//		timelines.printTimeline();
+//		timelines.printTimelineWithLimit();
+//
+//		CloudTimelineDays days = new CloudTimelineDays(testSDK);
+//		Executors.newSingleThreadExecutor().submit(days::printTimelineDaysSync);
+//		Executors.newSingleThreadExecutor().submit(days::printTimelineDaysWithLimitSync);
+//		days.printTimelineDays();
+//		days.printTimelineDaysWithLimit();
+//
+//		CloudEvents events = new CloudEvents(testSDK);
+//		Executors.newSingleThreadExecutor().submit(events::printEventsSync);
+//		Executors.newSingleThreadExecutor().submit(events::printEventsWithLimitSync);
+//		events.printEvents();
+//		events.printEventsWithLimit();
+//
+//		CloudTimelineSegments segments = new CloudTimelineSegments(testSDK);
+//		Executors.newSingleThreadExecutor().submit(segments::printSegmentsSync);
+//		Executors.newSingleThreadExecutor().submit(segments::printSegmentsWithLimitSync);
+//		segments.printSegments();
+//		segments.printSegmentsWithLimit();
+//
+//		CloudTimelineThumbnails thumbnails = new CloudTimelineThumbnails(testSDK);
+//		Executors.newSingleThreadExecutor().submit(thumbnails::printThumbnailsSync);
+//		Executors.newSingleThreadExecutor().submit(thumbnails::printThumbnailsWithLimitSync);
+//		thumbnails.printThumbnails();
+//		thumbnails.printThumbnailsWithLimit();
+	}
   	@Override
   	protected void onDestroy() 
   	{
