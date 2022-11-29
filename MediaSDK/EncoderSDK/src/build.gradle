@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 ext {
-    cloudsdk_ver = project.hasProperty('cloudsdk_ver') ? project.getProperty('cloudsdk_ver') : "2.0.306"
-    encodersdk_ver = project.hasProperty('encodersdk_ver') ? project.getProperty('encodersdk_ver') : "6.13.20221129"
+    cloudsdk_ver = project.hasProperty('cloudsdk_ver') ? project.getProperty('cloudsdk_ver') : "2.0.307"
+    encodersdk_ver = project.hasProperty('encodersdk_ver') ? project.getProperty('encodersdk_ver') : "6.13.20221130"
 }
 
 buildscript {
