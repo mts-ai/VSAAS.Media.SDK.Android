@@ -1,5 +1,21 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.308
+
+ CloudSDK
+Version 2.0.308_20221201:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20221201
+  EncoderSDK: 6.13.20221201
+
+ PlayerSDK
+Version 6.96.20221201:
+- updated license list
+
+ EncoderSDK
+Version 6.13.20221201:
+- updated license list
+
 ### MobileSDK 2.0.307
 
  CloudSDK
