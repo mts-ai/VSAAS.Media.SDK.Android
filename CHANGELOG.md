@@ -1,5 +1,22 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.309
+
+ CloudSDK
+Version 2.0.309_20221230:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20221230
+
+ PlayerSDK
+Version 6.96.20221230:
+- fixed a possible crash when using an external surface that 
+  is already in the window hierarchy
+- fixed possible issues related to Tagget Pointers technology 
+  on Android 13
+
+ EncoderSDK
+Version 6.13.20221201:
+
 ### MobileSDK 2.0.308
 
  CloudSDK
