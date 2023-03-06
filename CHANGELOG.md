@@ -11,7 +11,7 @@ Version 2.0.310_20230306:
  PlayerSDK
 Version 6.96.20230306:
 - updated license list
-- fixed issue in ffmpeg rtsp setup command and related digest authentication
+- fixed digest auth for ffmpeg rtsp send command
 
  EncoderSDK
 Version 6.13.20230306:
