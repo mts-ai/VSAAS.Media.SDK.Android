@@ -37,7 +37,7 @@ dependencies {
     implementation 'com.prolificinteractive:material-calendarview:1.4.3'
 
     // Please use playersdk if only media player is used  	
-    // implementation 'com.vxg.mediasdk:playersdk:6.96.20221230'
+    // implementation 'com.vxg.mediasdk:playersdk:6.96.20230306'
     // Please use cloudsdk for grid example because 
     // CloudMultiPlayerView is located in cloud SDK
     if (project.hasProperty("isLocalDependencies") && !project.isLocalDependencies.isEmpty()) {

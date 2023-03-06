@@ -1,5 +1,22 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.310
+
+ CloudSDK
+Version 2.0.310_20230306:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20230306
+  EncoderSDK: 6.13.20230306
+
+ PlayerSDK
+Version 6.96.20230306:
+- updated license list
+- fixed issue in ffmpeg rtsp setup command and related digest authentication
+
+ EncoderSDK
+Version 6.13.20230306:
+- updated license list
+
 ### MobileSDK 2.0.309
 
  CloudSDK
