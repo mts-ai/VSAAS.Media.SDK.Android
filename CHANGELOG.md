@@ -1,5 +1,45 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.314
+
+ CloudSDK
+Version 2.0.314_20230515:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20230512
+  EncoderSDK: 6.13.20230512
+- improved live stream opening speed
+- added new method onLiveUrlsProvider in PlayerCallback with the ability to set a live url
+- added new advanced config settings for tune low latency and fast detection stream functionality:
+  *AdvancedOptionInitWithFastStreamDetection,
+  *AdvancedOptionInitWithLowLatency,
+  *AdvancedOptionTcpNoDelay,
+  *AdvancedOptionAnalyzeDuration,
+  *AdvancedOptionHlsReloadPlaylistInterval
+- added new advanced config setting for auto reconnect after data io error occurred:
+  *reconnectOnErrorDataIO
+- added new advanced config setting for enable internal get camera status check:
+  *enableCameraStatusCheck  
+
+ PlayerSDK
+Version 6.96.20230512:
+- migrated on ffmpeg.6.0.0
+- added new low latency functionality
+- improved stream fast detection functionality
+- added new data IO error support
+  CP_ERROR_DATA_IO
+- added new advanced config settings:
+  advancedSourceOptionTcpNoDelay,
+  advancedSourceOptionAnalyzeDuration,
+  advancedSourceOptionHlsReloadPlaylistInterval,
+  advancedSourceInitWithFastStreamDetection,
+  advancedSourceInitWithLowLatency
+- fixed possible crash on close
+
+ EncoderSDK
+Version 6.13.20230512:
+- migrated on ffmpeg.6.0.0
+- fixed problem with loading native part
+
 ### MobileSDK 2.0.313
 
  CloudSDK
