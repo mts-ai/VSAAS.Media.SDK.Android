@@ -12,6 +12,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.media.AudioManager;
+import android.media.MediaRecorder;
 import android.net.wifi.WifiManager;
 import android.net.wifi.WifiManager.MulticastLock;
 import android.os.AsyncTask;
@@ -56,8 +58,13 @@ import com.vxg.ui.CloudPlayerView;
 import com.vxg.ui.TimeLineSet;
 
 import java.io.File;
+import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.concurrent.Executors;
+
+import veg.mediacapture.sdk.MediaCapture;
+import veg.mediacapture.sdk.MediaCaptureCallback;
+import veg.mediacapture.sdk.MediaCaptureConfig;
 
 public class MainActivity extends Activity implements OnClickListener, CloudPlayerView.OnCloudPlayerViewChange
 {
@@ -66,6 +73,7 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 	public  static		AutoCompleteTextView	edtId;
 	private Button		btnConnect;
 	private Button 		btnTestAPI;
+	private Button 		btnTestBackwardAudio;
 	private Button 		btnShowTimeline;
 
 	private Button 		btnRecord;
@@ -80,6 +88,9 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 	//SET Channel
 	String msAccessToken = "";
 
+	private boolean isBackwardStarted = false;
+	private MediaCapture mediaCapture;
+	private MediaCaptureConfig mediaCaptureConfig;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -169,6 +180,18 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 
 		playerSDK = player.getCloudPlayerSDK();
 
+		playerSDK.addCallback(new ICloudPlayerCallback() {
+			@Override
+			public void onStatus(CloudPlayerEvent cloudPlayerEvent, ICloudObject iCloudObject) {
+				if (cloudPlayerEvent == CloudPlayerEvent.CONNECTED) {
+					runOnUiThread(() -> {
+						String rtmpUrl = playerSDK.getBackwardAudioUrl();
+						Log.d(TAG,"backward: " + rtmpUrl);
+						openCapture(rtmpUrl);
+					});
+				}
+			}
+		});
 		player.setTimeLineEnabled(true);
 		//player.getTimeLine().setType(TimeLineSet.TimeLine.TYPE_RANGE);
 		player.hideTimeLine();
@@ -223,6 +246,14 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 			}
 		});
 
+		btnTestBackwardAudio = findViewById(R.id.but_backward_audio);
+		btnTestBackwardAudio.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				testBackwardAudio();
+			}
+		});
+
 		this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
 		edtId = (AutoCompleteTextView)findViewById(R.id.edit_id);
@@ -263,6 +294,58 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 
     }
 
+	public void openCapture(String rtmpUrl) {
+		mediaCapture = new MediaCapture(this, null, false);
+
+		mediaCaptureConfig = mediaCapture.getConfig();
+
+		mediaCaptureConfig.setCaptureMode(MediaCaptureConfig.CaptureModes.PP_MODE_AUDIO.val());
+		mediaCaptureConfig.setAudioChannels(1);
+		mediaCaptureConfig.setAudioFormat(MediaCaptureConfig.TYPE_AUDIO_G711_ALAW);
+		mediaCaptureConfig.setAudioSamplingRate(8000);
+		mediaCaptureConfig.setStreamType(MediaCaptureConfig.StreamerTypes.STREAM_TYPE_RTMP_PUBLISH.val());
+		mediaCaptureConfig.setStreaming(true);
+
+		// change audio input
+		AudioManager audio_manager = (AudioManager) getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
+		audio_manager.setMode(AudioManager.MODE_IN_COMMUNICATION);
+		audio_manager.setSpeakerphoneOn(true);
+
+		mediaCaptureConfig.setAudioSource(MediaRecorder.AudioSource.MIC);
+
+		// rtmp publish url
+		mediaCaptureConfig.setUrl(rtmpUrl);
+
+		// if you want to start without sound
+		//mediaCaptureConfig.setAudioMute(true);
+		mediaCapture.Open(mediaCaptureConfig, new MediaCaptureCallback() {
+			@Override
+			public int OnCaptureStatus(int arg) {
+				MediaCapture.CaptureNotifyCodes status = MediaCapture.CaptureNotifyCodes.forValue(arg);
+				Log.i(TAG, "MediaCapture: status: " + status);
+				switch (status) {
+					case CAP_STARTED:
+						isBackwardStarted = true;
+						runOnUiThread(() -> btnTestBackwardAudio.setText("MIC ON"));
+						break;
+					case CAP_STOPPED:
+						isBackwardStarted = false;
+						runOnUiThread(() -> btnTestBackwardAudio.setText("MIC OFF"));
+						break;
+					default:
+						break;
+				}
+				return 0;
+			}
+
+			@Override
+			public int OnCaptureReceiveData(ByteBuffer byteBuffer, int type, int size, long pts) {
+				return 0;
+			}
+		});
+		runOnUiThread(() -> btnTestBackwardAudio.setEnabled(true));
+	}
+
 	public boolean check_access_token(){
     	String ch = edtId.getText().toString();
     	if(ch.length() > 0){
@@ -293,6 +376,9 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 			config.localRecordFlags(CloudPlayerLocalRecordFlag.AUTO_START.value | CloudPlayerLocalRecordFlag.SPLIT_BY_TIME.value);
 			config.localRecordSplitTime(30);
 			config.localRecordPrefix("AutoTestRecord");
+
+			config.setLiveUrlType(CloudLiveUrlType.RTMPS);
+
 			playerSDK.setConfig(config);
 
 			playerSDK.setSource(msAccessToken);
@@ -318,6 +404,17 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 		return mediaStorageDir.getPath();
 	}
 
+	private void testBackwardAudio() {
+		// you may or Stop/Start streaming
+		// or Mute/Unmute audio data with method:
+		// mediaCapture.getConfig().setAudioMute(false);
+
+		if (isBackwardStarted) {
+			mediaCapture.Stop();
+		} else {
+			mediaCapture.Start();
+		}
+	}
 	private void testAPI() {
 		// To check the snippets, please uncomment what you are interested in checking.
 		// The result is in the application logs

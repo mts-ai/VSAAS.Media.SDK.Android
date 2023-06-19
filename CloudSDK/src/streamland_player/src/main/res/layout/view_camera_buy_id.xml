@@ -20,6 +20,18 @@
 			    android:layout_width="match_parent"
 			    android:layout_height="match_parent"
 			    />
+
+		   <Button
+			   android:id="@+id/but_backward_audio"
+			   android:layout_width="110dp"
+			   android:layout_height="48dp"
+			   android:layout_gravity="right|top|center_vertical"
+			   android:layout_marginTop="15dp"
+			   android:layout_marginRight="15dp"
+			   android:text="MIC OFF"
+			   android:enabled="false"
+			   android:textColor="#ffffff" />
+
 	   </FrameLayout>
 
        <LinearLayout
@@ -87,6 +99,7 @@
 				   android:paddingRight="20dp"
 				   android:singleLine="true"
 				   android:text="@string/action_connect"
+				   android:textColor="#ffffff"
 				   android:textAppearance="?android:attr/textAppearanceSmall" />
 		   </LinearLayout>
 
