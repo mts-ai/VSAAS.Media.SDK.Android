@@ -1,5 +1,38 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.315
+
+ CloudSDK
+Version 2.0.315_20230630:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20230629
+  EncoderSDK: 6.13.20230512
+- improved live and backward url request logic
+- added new configure setting for backward url type
+- improved getPosition method accuracy
+- improved data IO error handling
+- added new advanced config settings:
+  *WorkaroundRemoveBackwardJumpsForGetPosition,
+  *AdvancedSourcePtsModifyMode,
+  *AdvancedOptionReconnectDelayStep
+
+
+ PlayerSDK
+Version 6.96.20230629:
+- fixed problems related to migration to FFMPEG version 6.0.0
+- improved getaddrinfo async version on the ffmpeg level
+- added http reconnect delay step setting on the ffmpeg level
+- removed jumps back for get stream and renderer position methods after changing position
+- corrected data flush after successful position change
+- improved data IO error handling
+- added new advanced config settings for new features:
+  advancedSourcePtsModifyMode
+  advancedSourceOptionHttpReconnectDelayStep
+  workaroundRemoveBackwardJumpsForGetPosition
+
+ EncoderSDK
+Version 6.13.20230512:
+
 ### MobileSDK 2.0.314
 
  CloudSDK
