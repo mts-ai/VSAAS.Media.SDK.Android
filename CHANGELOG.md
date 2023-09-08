@@ -1,5 +1,36 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.319
+
+CloudSDK
+Version 2.0.319_20230908:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20230908
+  EncoderSDK: 6.13.20230908
+- added new API support: CameraAVSettingsVideo
+- added possiblity reconnect on the video output format changed notify
+- added new advanced config settings:
+  decodingType
+  reconnectOnVideoOutputFormatChanged
+  workaroundRemoveBackwardDiscontinuityForGetData
+
+PlayerSDK
+Version 6.96.20230908:
+- added support for dynamic change of video stream resolution
+- added support for restarting pts video and audio streams
+- added notify VDP_OUTPUT_FORMAT_CHANGED
+- added HWACCEL decoding support
+- added new advanced config settings for restarting pts functionality
+  workaroundRemoveBackwardDiscontinuityForGetData
+
+EncoderSDK
+Version 6.13.20230908:
+
+FFMPEG:
+Version 6.0.0:
+- added mediacodec support
+- fixed mediacodec dynamic change format issue
+
 ### MobileSDK 2.0.315
 
  CloudSDK
