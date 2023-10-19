@@ -1,5 +1,22 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.321
+
+CloudSDK
+Version 2.0.321_20231019:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20231019
+  EncoderSDK: 6.13.20231019
+- fixed possible dead locks in local player functionality
+- fixed configuration not being applied before opening local player
+
+PlayerSDK
+Version 6.96.20231019:
+- migrated on the ffmpeg based VPS/SPS/PPS parsing
+
+EncoderSDK
+Version 6.13.20231019:
+
 ### MobileSDK 2.0.319
 
 CloudSDK
