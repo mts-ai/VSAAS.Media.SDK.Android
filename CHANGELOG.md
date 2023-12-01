@@ -1,5 +1,20 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.322
+
+CloudSDK
+Version 2.0.322_20231201:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20231201
+
+PlayerSDK
+Version 6.96.20231201:
+- fixed getVideoShot method
+- fixed double start notify for record functionality
+
+EncoderSDK
+Version 6.13.20231019:
+
 ### MobileSDK 2.0.321
 
 CloudSDK
@@ -16,6 +31,7 @@ Version 6.96.20231019:
 
 EncoderSDK
 Version 6.13.20231019:
+
 
 ### MobileSDK 2.0.319
 

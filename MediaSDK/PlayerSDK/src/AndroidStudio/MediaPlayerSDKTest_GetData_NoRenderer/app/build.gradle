@@ -33,7 +33,7 @@ dependencies {
     if (project.hasProperty("isLocalDependencies") && !project.isLocalDependencies.isEmpty()) {
         implementation fileTree(dir: project.art_url_playersdk, include: '*.aar')
     } else {
-        implementation 'com.vxg.mediasdk:playersdk:6.96.20231019'
+        implementation 'com.vxg.mediasdk:playersdk:6.96.20231201'
     }
     implementation 'com.google.android.gms:play-services-vision:20.1.3'
 }
