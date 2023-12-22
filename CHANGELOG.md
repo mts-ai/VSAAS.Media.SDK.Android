@@ -1,5 +1,65 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.324
+
+CloudSDK
+Version 2.0.324_20231222:
+- fixed existed getTimelineDays methods according latest VXG API changes
+- added new parameters for getTimelineDays
+- added new parameters for getTimeline method
+- added new methods: getEventsTypes
+
+PlayerSDK
+Version 6.96.20231215:
+
+EncoderSDK
+Version 6.13.20231019:
+
+### MobileSDK 2.0.323
+
+CloudSDK
+Version 2.0.323_20231215:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20231215
+- greatly improved memory consumption and cpu utilization
+- added framerate control
+- added buffer size and type configuration for video and audio renderer
+- fixed getVideoShot functionality
+- added a lot of new settings:
+  dataReceiveTimeout,
+  videoKeyframeOnly,
+  synchroNeedDropVideoFrames,
+  advancedConnectionNetworkProtocolBufferSize,
+  advancedConnectionNetworkProtocolPacketSize,
+  advancedSourceAsyncGetPacket,
+  advancedVideoRendererPreferredFpsNum,
+  advancedVideoRendererPreferredFpsDen,
+  internalPlayerMode,
+  internalBufferSourceVideodecoderType,
+  internalBufferSourceVideodecoderSize,
+  internalBufferVideodecoderVideorendererType,
+  internalBufferVideodecoderVideorendererSize,
+  internalBufferSourceAudiodecoderType,
+  internalBufferSourceAudiodecoderSize,
+  internalBufferAudiodecoderAudiorendererType,
+  internalBufferAudiodecoderAudiorendererSize
+
+PlayerSDK
+Version 6.96.20231215:
+- greatly improved memory consumption and cpu utilization
+- added framerate control
+- added buffer size and type configuration for video and audio renderer
+- fixed player mode functionality for playback pipeline configuration
+- fixed getVideoShot functionality
+- added new settings:
+  advancedConnectionNetworkProtocolBufferSize 
+  advancedConnectionNetworkProtocolPacketSize
+  advancedVideoRendererPreferredFpsNum
+  advancedVideoRendererPreferredFpsDen
+
+EncoderSDK
+Version 6.13.20231019:
+
 ### MobileSDK 2.0.322
 
 CloudSDK
