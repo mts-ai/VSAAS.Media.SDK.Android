@@ -1,5 +1,29 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.328
+
+CloudSDK
+Version 2.0.328_20240228:
+- updated versions of used SDK:
+  PlayerSDK: 6.96.20240228
+- added the ability to use the CloudPlayerSDK without view
+- added constructor with context parameter
+- removed the requirement for the context to be activity
+- added getLiveUrls methods
+
+PlayerSDK
+Version 6.96.20240228:
+- added the ability to hot change the surface for rendering
+- improved functionality for working with surface loss
+- improved audio / video synchronization
+- improved thumbnailer funstionality and speed
+- fixed possible thumbnailer deadlock
+- fixed low speed issue on some streams
+- fixed crash when there is no view renderer
+
+EncoderSDK
+Version 6.13.20231019:
+
 ### MobileSDK 2.0.324
 
 CloudSDK
