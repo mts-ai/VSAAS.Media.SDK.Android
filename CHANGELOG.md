@@ -1,5 +1,19 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.329
+
+CloudSDK
+Version 2.0.329_20240417:
+- updated versions of used SDK:
+  EncoderSDK: 6.13.20240417
+
+PlayerSDK
+Version 6.96.20240228:
+
+EncoderSDK
+Version 6.13.20240417:
+- added the ability to apply various filters to input audio data
+
 ### MobileSDK 2.0.328
 
 CloudSDK
