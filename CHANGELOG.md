@@ -1,5 +1,18 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.330
+
+CloudSDK
+Version 2.0.330_20240424:
+- fixed crash in getTimeline method
+- fixed getTimelineDays method when used with setSourceForAPIOnly
+
+PlayerSDK
+Version 6.96.20240228:
+
+EncoderSDK
+Version 6.13.20240417:
+
 ### MobileSDK 2.0.329
 
 CloudSDK
