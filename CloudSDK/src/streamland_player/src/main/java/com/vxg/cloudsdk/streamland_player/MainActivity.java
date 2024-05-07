@@ -59,6 +59,7 @@ import com.vxg.ui.TimeLineSet;
 
 import java.io.File;
 import java.nio.ByteBuffer;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
 
@@ -311,7 +312,15 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 		audio_manager.setMode(AudioManager.MODE_IN_COMMUNICATION);
 		audio_manager.setSpeakerphoneOn(true);
 
-		mediaCaptureConfig.setAudioSource(MediaRecorder.AudioSource.MIC);
+		mediaCaptureConfig.setAudioSource(MediaRecorder.AudioSource.VOICE_COMMUNICATION);
+
+		mediaCaptureConfig.setAdvancedAudioInputEnablePreprocessing(1);
+
+		ArrayList<Pair<String, String>> filters = new ArrayList<>();
+		filters.add(new Pair<>("dynaudnorm", "framelen=23:gausssize=5:peak=0.80:maxgain=10:targetrms=1"));
+		//filters.add(new Pair<>("volume", "volume=30dB"));
+		//filters.add(new Pair<>("loudnorm", "linear=true"));
+		mediaCaptureConfig.setAdvancedAudioInputPreprocessingFilters(filters);
 
 		// rtmp publish url
 		mediaCaptureConfig.setUrl(rtmpUrl);
@@ -366,9 +375,15 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 
 	public void onClick(View v)
 	{
-		try{
-			if(!check_access_token())
-				return ;
+		try {
+			if (!check_access_token())
+				return;
+
+			if (player.isPlaying()) {
+				mediaCapture.Close();
+				player.close();
+				return;
+			}
 
 			// set auto started record
 			CloudPlayerConfig config = playerSDK.getCloneConfig();
@@ -441,6 +456,8 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 //		Executors.newSingleThreadExecutor().submit(timelines::printTimelineWithLimitSync);
 //		timelines.printTimeline();
 //		timelines.printTimelineWithLimit();
+//		Executors.newSingleThreadExecutor().submit(timelines::printTimelineWithLimitAndPagingSync);
+
 //
 //		CloudTimelineDays days = new CloudTimelineDays(testSDK);
 //		Executors.newSingleThreadExecutor().submit(days::printTimelineDaysSync);
@@ -459,6 +476,12 @@ public class MainActivity extends Activity implements OnClickListener, CloudPlay
 //		Executors.newSingleThreadExecutor().submit(segments::printSegmentsWithLimitSync);
 //		segments.printSegments();
 //		segments.printSegmentsWithLimit();
+//		segments.printSegment();
+//		segments.printSegmentSync();
+//		Executors.newSingleThreadExecutor().submit(segments::deleteSegmentForTime);
+//		Executors.newSingleThreadExecutor().submit(segments::deleteSegmentForRecordId);
+//		Executors.newSingleThreadExecutor().submit(segments::deleteSegmentForTimeSync);
+//		Executors.newSingleThreadExecutor().submit(segments::deleteSegmentForRecordIdSync);
 //
 //		CloudTimelineThumbnails thumbnails = new CloudTimelineThumbnails(testSDK);
 //		Executors.newSingleThreadExecutor().submit(thumbnails::printThumbnailsSync);

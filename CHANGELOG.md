@@ -1,5 +1,29 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.331
+
+CloudSDK
+Version 2.0.331_20240503:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20240503
+  EncoderSDK: 6.13.20240503
+- added offset emulation for getTimeline API
+- added delete storage data API support
+- added order_by support for getTimeline
+- added new API support:
+  getTimelineSegment, deleteTimelineSegment, deleteTimelineSegments
+- added deleteTimeline command alias
+- updated snippets
+
+PlayerSDK
+Version 6.96.20240503:
+- updated license list
+- fixed memory leaks
+
+EncoderSDK
+Version 6.13.20240503:
+- updated license list
+
 ### MobileSDK 2.0.330
 
 CloudSDK
