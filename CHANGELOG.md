@@ -1,5 +1,24 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.332
+
+CloudSDK
+Version 2.0.332_20240529:
+- updated versions of used SDK: 
+  PlayerSDK: 6.96.20240529
+  EncoderSDK: 6.13.20240529
+- fixed possible static context memory leaks
+- migrate API ids from Interger to Long
+
+PlayerSDK
+Version 6.96.20240529:
+- updated license list
+
+EncoderSDK
+Version 6.13.20240529:
+- fixed possible static context memory leaks
+- updated license list
+
 ### MobileSDK 2.0.331
 
 CloudSDK
