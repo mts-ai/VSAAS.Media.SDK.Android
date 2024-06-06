@@ -1,5 +1,21 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.333
+
+CloudSDK
+Version 2.0.333_20240606:
+- updated versions of used SDK:
+  PlayerSDK: 6.96.20240606
+- fixed possible crash on PTZ execute command
+
+PlayerSDK
+Version 6.96.20240606:
+- added optional callback to monitor current position of playing stream
+- added new callback: OnStreamPositionDidChange
+
+EncoderSDK
+Version 6.13.20240529:
+
 ### MobileSDK 2.0.332
 
 CloudSDK
