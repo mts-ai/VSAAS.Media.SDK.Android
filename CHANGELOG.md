@@ -1,5 +1,19 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.334
+
+CloudSDK
+Version 2.0.334_20240611:
+- fixed a possible crash in GetTimelineDays if a timeout occurred
+- fixed a possible deadlock on the reconnect when losing and restoring
+  a live stream from a camera
+
+PlayerSDK
+Version 6.96.20240606:
+
+EncoderSDK
+Version 6.13.20240529:
+
 ### MobileSDK 2.0.333
 
 CloudSDK
