@@ -1,5 +1,24 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.336
+
+CloudSDK
+Version 2.0.336_20240816:
+- updated versions of used SDK:
+  PlayerSDK: 6.96.20240816
+- added the ability to select the recording container type
+- added new settings for recording container type
+- fixed a possible issue with live stream stopping after the camera became active
+- added new setting: workaroundWaitUntilLiveStreamCompletelyReady
+
+PlayerSDK
+Version 6.96.20240816:
+- added the ability to select the recording container type
+- added new settings for recording container type
+
+EncoderSDK
+Version 6.13.20240529:
+
 ### MobileSDK 2.0.335
 
 CloudSDK
