@@ -1,5 +1,23 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.337
+
+CloudSDK
+Version 2.0.337_20240829:
+- updated versions of used SDK:
+  PlayerSDK: 6.96.20240829
+  EncoderSDK: 6.13.20240829
+- fixed possible issue with missed notification about recording stop on reconnect
+
+PlayerSDK
+Version 6.96.20240829:
+- enabled transcoding only for g711 and mp4 container
+- improved transcoding functionality
+
+EncoderSDK
+Version 6.13.20240829:
+- builded for use latest ffmpeg
+
 ### MobileSDK 2.0.336
 
 CloudSDK
