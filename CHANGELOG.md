@@ -1,5 +1,19 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.338
+
+CloudSDK
+Version 2.0.338_20240927:
+- updated versions of used SDK:
+  PlayerSDK: 6.96.20240927
+
+PlayerSDK
+Version 6.96.20240927:
+- corrected notification status flow for recording streams without data
+
+EncoderSDK
+Version 6.13.20240829:
+
 ### MobileSDK 2.0.337
 
 CloudSDK
