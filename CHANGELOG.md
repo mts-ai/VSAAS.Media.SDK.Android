@@ -1,5 +1,20 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.339
+
+CloudSDK
+Version 2.0.339_20241024:
+- updated versions of used SDK:
+  PlayerSDK: 6.96.20241024
+- optimized stream opening time for inactive camera
+
+PlayerSDK
+Version 6.96.20241024:
+- optimized stream opening time
+
+EncoderSDK
+Version 6.13.20240829:
+
 ### MobileSDK 2.0.338
 
 CloudSDK
