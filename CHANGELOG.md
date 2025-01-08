@@ -1,5 +1,22 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.340
+
+CloudSDK
+Version 2.0.340_20250108:
+- refactored for support several REST API providers
+- added BE REST API support
+- added settings for backend path configuration
+- added new settings for missed parameters in BE access token:
+  identityId, cameraId, cameraShareToken.
+
+PlayerSDK
+Version 6.96.20241024:
+- optimized stream opening time
+
+EncoderSDK
+Version 6.13.20240829:
+
 ### MobileSDK 2.0.339
 
 CloudSDK
