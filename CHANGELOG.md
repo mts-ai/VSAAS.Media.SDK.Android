@@ -1,5 +1,17 @@
 # VXG Mobile SDK Android
 
+### MobileSDK 2.0.341
+
+CloudSDK
+Version 2.0.341_20250130:
+- added Sleep Service API support to BE API
+
+PlayerSDK
+Version 6.96.20241024:
+
+EncoderSDK
+Version 6.13.20240829:
+
 ### MobileSDK 2.0.340
 
 CloudSDK
